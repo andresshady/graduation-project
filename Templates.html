@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Subida de .hex</title>
+</head>
+<body>
+  <h1>Subir archivo .hex para programar la placa</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li><strong>{{ message }}</strong></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="archivo" accept=".hex" required>
+    <button type="submit">Subir</button>
+  </form>
+</body>
+</html>
